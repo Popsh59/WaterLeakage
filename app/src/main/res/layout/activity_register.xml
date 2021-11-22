@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Register"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/primary_dark">
 
     <TextView android:layout_height="wrap_content"
         android:layout_width="wrap_content"
@@ -16,8 +17,6 @@
         android:layout_gravity="center"
         android:textStyle="bold"
         android:layout_marginTop="10dp"/>
-
-
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_height="79dp"
@@ -50,8 +49,7 @@
             android:id="@+id/edtEmail"
             android:hint="Enter your email address"
             android:gravity="center"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
+</com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_height="79dp"
@@ -70,14 +68,31 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_height="79dp"
+        android:layout_width="400dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/lytPassword"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/edtPassword"
+            android:hint="Enter your password"
+            android:gravity="center"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:id="@+id/btnSubmit"
         android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/buttons"
-        android:text="Submit">
+        android:text="Submit"
+        />
 
-    </Button>
 
 </LinearLayout>

@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WaterLeakage">
-        <activity android:name=".Register"></activity>
+        <activity android:name=".AdminViewLeakages"></activity>
+        <activity android:name=".UserReportLeakage" />
+        <activity android:name=".PlumberHomeScreen" />
+        <activity android:name=".UserHomeScreen" />
+        <activity android:name=".AdminHomeScreen" />
+        <activity android:name=".OTP" />
+        <activity android:name=".Register" />
         <activity android:name=".Login" />
         <activity android:name=".MainActivity">
             <intent-filter>
