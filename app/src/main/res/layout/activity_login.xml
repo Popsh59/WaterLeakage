@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Login"
     android:orientation="vertical"
-    android:background="@color/primary_dark">
+    >
 
     <ImageView
         android:id="@+id/imageLogo"
@@ -17,15 +17,15 @@
         android:src="@drawable/ic_water_drop_svgrepo_com"/>
 
     <TextView
-        android:id="@+id/tvGreeting"
+        android:id="@+id/tvVerify"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello there , Welcome to Market Platform"
-        android:textColor="@color/primary_text"
-        android:transitionName="logo_text"
+        android:layout_marginBottom="5dp"
         android:fontFamily="@font/chewy"
+        android:text="Hello there , Welcome to Water Leakage App"
+        android:textColor="@color/primary_text"
         android:textSize="40sp"
-        android:layout_marginBottom="5dp"/>
+        android:transitionName="logo_text" />
 
 
 
@@ -33,42 +33,41 @@
         android:layout_height="79dp"
         android:layout_width="400dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:id="@+id/lytCell"
+        android:id="@+id/lytCellNo"
         android:layout_marginTop="10dp"
         android:layout_gravity="center">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_height="wrap_content"
+            android:id="@+id/edtCellNo"
             android:layout_width="match_parent"
-            android:id="@+id/edtUsername"
-            android:hint="Enter your username"
-            android:gravity="center"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_height="79dp"
-        android:layout_width="400dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:id="@+id/lytPa"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center">
-
-        <com.google.android.material.textfield.TextInputEditText
             android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:id="@+id/edtCell"
-            android:hint="Enter your username"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:hint="Enter your cell number"
+            android:textColorHint="@color/primary_text" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/buttons"
         android:text="Login"/>
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/buttons"
+        android:text="Register"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
