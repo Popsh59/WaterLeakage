@@ -29,9 +29,9 @@
         android:src="@drawable/ic_open_hand_svgrepo_com"
         app:layout_constraintBottom_toTopOf="@+id/tvSlogan"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.385"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivDrop"/>
+        app:layout_constraintTop_toBottomOf="@+id/ivDrop" />
 
     <TextView
         android:id="@+id/tvSlogan"

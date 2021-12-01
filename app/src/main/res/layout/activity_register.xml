@@ -7,15 +7,16 @@
     tools:context=".Register"
     android:orientation="vertical">
 
-    <TextView android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:transitionName="logo_text"
+    <TextView
         android:id="@+id/tvWelcome"
-        android:textSize="40sp"
-        android:text="Register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textStyle="bold"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/chewy"
+        android:text="Register"
+        android:textSize="40sp"
+        android:textStyle="bold" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_height="79dp"
@@ -83,6 +84,14 @@
             android:gravity="center"/>
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp" />
 
     <Button
         android:id="@+id/btnSubmit"
