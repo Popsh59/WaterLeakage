@@ -35,12 +35,14 @@ public class OTP extends AppCompatActivity {
     Button btnVerify;
     ProgressBar progressBar;
     FirebaseAuth mAuth;
-    String verificationCodeBySystem,cellNum,email,role;
+    String verificationCodeBySystem,cellNum,email,role,code;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_o_t_p);
+
+        mAuth = FirebaseAuth.getInstance();
 
         imageLog = findViewById(R.id.imageLog);
         tvVerify = findViewById(R.id.tvVerify);
@@ -49,11 +51,12 @@ public class OTP extends AppCompatActivity {
         btnVerify = findViewById(R.id.btnVerify);
         progressBar = findViewById(R.id.progressBar);
 
-        cellNum = getIntent().getStringExtra("cell");
-        email = getIntent().getStringExtra("email");
-        role = getIntent().getStringExtra("role");
+        cellNum = ApplicationClass.userCell;
+        email = ApplicationClass.userEmail;
+        role = ApplicationClass.userRole;
+        String cel = "+27"+ cellNum;
 
-        sendVerificationCodeToUser(cellNum);
+        sendVerificationCodeToUser(cel);
 
         btnVerify.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,12 +64,17 @@ public class OTP extends AppCompatActivity {
                 String code =  edtOtp.getText().toString();
                 if(code.isEmpty() || code.length() < 6)
                 {
+                    progressBar.setVisibility(View.GONE);
                   lytOtp.setError("Wrong code entered ...");
                   lytOtp.requestFocus();
                   return;
                 }
+                else
+                    {
+                        verifyCode(code);
+                    }
 
-                progressBar.setVisibility(View.GONE);
+
 
             }
         });
@@ -75,17 +83,16 @@ public class OTP extends AppCompatActivity {
 
     private void sendVerificationCodeToUser(String cellNum)
     {
-         mAuth = FirebaseAuth.getInstance();
+
 
         PhoneAuthOptions options =
                 PhoneAuthOptions.newBuilder(mAuth)
-                        .setPhoneNumber("+27" + cellNum)       // Phone number to verify
-                        .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
+                        .setPhoneNumber(cellNum)       // Phone number to verify
+                        .setTimeout(60L, TimeUnit.MINUTES) // Timeout and unit
                         .setActivity(this)                 // Activity (for callback binding)
                         .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
                         .build();
-
-
+        PhoneAuthProvider.verifyPhoneNumber(options);
 
     }
 
@@ -100,9 +107,10 @@ public class OTP extends AppCompatActivity {
         @Override
         public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
 
-            String code = phoneAuthCredential.getSmsCode();
+             code = phoneAuthCredential.getSmsCode();
             if(code!=null)
             {
+                edtOtp.setText(code);
                 progressBar.setVisibility(View.VISIBLE);
                 verifyCode(code);
             }
@@ -135,16 +143,16 @@ public class OTP extends AppCompatActivity {
                             Intent intent;
                             if(role.equals("User"))
                             {
-                                intent = new Intent(OTP.this,UserHomeScreen.class);
+                                startActivity(new Intent(OTP.this,UserHomeScreen.class));
 
                             }
                             else if(role.equals("Plumber"))
                             {
-                                intent = new Intent(OTP.this,PlumberHomeScreen.class);
+                                startActivity(new Intent(OTP.this,PlumberHomeScreen.class));
                             }
                             else
                             {
-                                intent = new Intent(OTP.this,AdminHomeScreen.class);
+                                startActivity(new Intent(OTP.this,AdminHomeScreen.class));
                             }
 
                         }

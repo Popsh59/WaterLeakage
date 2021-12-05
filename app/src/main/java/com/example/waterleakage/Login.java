@@ -83,11 +83,11 @@ public class Login extends AppCompatActivity {
 
 
                                 }
+                                ApplicationClass.userEmail = email;
+                                ApplicationClass.userCell = phoneNum;
+                                ApplicationClass.userRole = role;
 
                                 intent = new Intent(Login.this,OTP.class);
-                                intent.putExtra("role",role);
-                                intent.putExtra("email",email);
-                                intent.putExtra("cell",phoneNum);
                                 startActivity(intent);
 
                             }

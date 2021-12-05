@@ -65,8 +65,7 @@ public class Register extends AppCompatActivity {
                 }
                 else
                 {
-                    if(edtCell.getText().toString().length() == 10)
-                    {
+
                         email = edtEmail.getText().toString().trim();
                         password = edtPassword.getText().toString().trim();
                         cell = edtCell.getText().toString().trim();
@@ -101,12 +100,8 @@ public class Register extends AppCompatActivity {
                             }
                         });
 
-                    }
-                    else
-                    {
-                        Toast.makeText(Register.this, "Please ensure cell number is 10 characters", Toast.LENGTH_SHORT).show();
-                        progressBar2.setVisibility(View.GONE);
-                    }
+
+
 
                 }
 
