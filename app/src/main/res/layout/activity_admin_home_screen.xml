@@ -32,7 +32,7 @@
         android:layout_marginBottom="548dp"
         android:background="@color/primary_dark"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/cardView2"
+        app:layout_constraintEnd_toStartOf="@+id/cvViewLeaks"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAdmin"
@@ -40,7 +40,7 @@
         card_view:cardElevation="5dp">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tvAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center_horizontal"
@@ -57,7 +57,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
+        android:id="@+id/cvViewLeaks"
         android:layout_width="100dp"
         android:layout_height="90dp"
         android:layout_marginStart="51dp"

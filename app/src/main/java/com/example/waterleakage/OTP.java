@@ -88,7 +88,7 @@ public class OTP extends AppCompatActivity {
         PhoneAuthOptions options =
                 PhoneAuthOptions.newBuilder(mAuth)
                         .setPhoneNumber(cellNum)       // Phone number to verify
-                        .setTimeout(60L, TimeUnit.MINUTES) // Timeout and unit
+                        .setTimeout(120L, TimeUnit.SECONDS) // Timeout and unit
                         .setActivity(this)                 // Activity (for callback binding)
                         .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
                         .build();
@@ -144,15 +144,18 @@ public class OTP extends AppCompatActivity {
                             if(role.equals("User"))
                             {
                                 startActivity(new Intent(OTP.this,UserHomeScreen.class));
+                                finish();
 
                             }
                             else if(role.equals("Plumber"))
                             {
                                 startActivity(new Intent(OTP.this,PlumberHomeScreen.class));
+                                finish();
                             }
                             else
                             {
                                 startActivity(new Intent(OTP.this,AdminHomeScreen.class));
+                                finish();
                             }
 
                         }

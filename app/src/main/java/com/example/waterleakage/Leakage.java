@@ -2,18 +2,35 @@ package com.example.waterleakage;
 
 public class Leakage
 {
-    private String leakType,leakStatus,leakLocation,leakDescription,leakBy,leakPlumber;
+    private String leakType,leakStatus,leakDescription,leakBy,leakPlumber;
+    private double lat, lon;
 
-    public Leakage(){}
-
-    public Leakage(String leakType, String leakStatus, String leakLocation, String leakDescription, String leakBy, String leakPlumber)
-    {
+    public Leakage(String leakType, String leakStatus, String leakDescription, String leakBy, String leakPlumber, double lat, double lon) {
         this.leakType = leakType;
         this.leakStatus = leakStatus;
-        this.leakLocation = leakLocation;
         this.leakDescription = leakDescription;
         this.leakBy = leakBy;
         this.leakPlumber = leakPlumber;
+        this.lat = lat;
+        this.lon = lon;
+    }
+
+    public Leakage(){}
+
+    public double getLat() {
+        return lat;
+    }
+
+    public void setLat(double lat) {
+        this.lat = lat;
+    }
+
+    public double getLon() {
+        return lon;
+    }
+
+    public void setLon(double lon) {
+        this.lon = lon;
     }
 
     public String getLeakBy() {
@@ -48,13 +65,6 @@ public class Leakage
         this.leakStatus = leakStatus;
     }
 
-    public String getLeakLocation() {
-        return leakLocation;
-    }
-
-    public void setLeakLocation(String leakLocation) {
-        this.leakLocation = leakLocation;
-    }
 
     public String getLeakDescription() {
         return leakDescription;
